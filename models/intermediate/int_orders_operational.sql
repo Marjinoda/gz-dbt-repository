@@ -5,7 +5,9 @@ SELECT
     revenue,
     quantity,
     margin,
-    purchase_cost
+    purchase_cost,
+    shipping_fee,
+    logcost
 FROM {{ ref('int_orders_margin') }}
 JOIN {{ ref('stg_raw__ship') }}
 USING(orders_id)
