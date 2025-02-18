@@ -13,10 +13,15 @@ renamed as (
         shipping_fee,
         shipping_fee_1,
         logcost,
-        ship_cost
+        CAST(ship_cost AS INT64) AS ship_cost
 
     from source
 
 )
 
-select * from renamed
+select 
+    orders_id,
+    shipping_fee,
+    logcost,
+    ship_cost
+from renamed
